@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+:root {
+  --background: #f3f7fa; --foreground: #102a43; --card: #ffffff; --card-foreground: #102a43;
+  --popover: #ffffff; --popover-foreground: #102a43; --primary: #173b67; --primary-foreground: #ffffff;
+  --secondary: #e8f2f6; --secondary-foreground: #173b67; --muted: #eef3f7; --muted-foreground: #62758a;
+  --accent: #e5f6fa; --accent-foreground: #176b87; --destructive: #c73737; --border: #d7e0e8;
+  --input: #d7e0e8; --ring: #1b7f9d; --chart-1: #176b87; --chart-2: #173b67; --chart-3: #278a6b;
+  --chart-4: #d89b38; --chart-5: #b55465; --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground); --color-popover: var(--popover); --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground); --color-destructive: var(--destructive);
+  --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px); --radius-md: calc(var(--radius) - 2px); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Aptos", "Segoe UI", Arial, sans-serif;
+}
+
+* { border-color: var(--border); }
+html { background: var(--background); }
+body { margin: 0; background: radial-gradient(circle at 78% 12%, rgba(51, 169, 195, 0.11), transparent 25rem), var(--background); color: var(--foreground); font-family: var(--font-sans); }
+button, input { font: inherit; }
+::selection { background: #c7edf5; color: #102a43; }
+
+@page { size: letter; margin: 0; }
+
+@media print {
+  html, body, main { background: #fff !important; }
+  .print-hidden { display: none !important; }
+  main > div { max-width: none !important; padding: 0 !important; }
+  .print-resume-screen { margin: 0 !important; padding: 0 !important; }
+  #resume-preview {
+    width: 8.5in !important;
+    max-width: none !important;
+    min-height: 11in !important;
+    margin: 0 !important;
+    padding: 0.5in 0.65in !important;
+    box-shadow: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  #resume-preview section { break-inside: avoid; }
+}
